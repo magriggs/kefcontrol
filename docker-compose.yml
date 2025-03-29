@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  kefcontrol:
+    build: .
+    ports:
+      - "50000:50000"
+    restart: unless-stopped
+    networks:
+      - kef-network
+
+networks:
+  kef-network:
+    driver: bridge
